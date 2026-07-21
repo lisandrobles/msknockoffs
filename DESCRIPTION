@@ -16,3 +16,5 @@ Imports:
     stats,
     glmnet,
     clustermq
+URL: https://github.com/lisandrobles/msknockoffs
+BugReports: https://github.com/lisandrobles/msknockoffs/issues
