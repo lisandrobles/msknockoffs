@@ -1,0 +1,18 @@
+Package: msknockoffs
+Title: Variable selection of genes using knockoffs methods
+Version: 0.0.0.9000
+Authors@R: person("Lisandro", "Robles", 
+  email= "lirobde@gmail.com",
+  role = c("aut", "cre"),
+  comment = c(ORCID = "0009-0009-1981-8164"))
+Description: An algorithm for variable selection of genes using knockoffs methods, you provide K number of datasets, put some arguments and get a final set of variables.
+License: MIT + file LICENSE
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 8.0.0
+Imports:
+    knockoff,
+    seqknockoff,
+    stats,
+    glmnet,
+    clustermq
