@@ -22,8 +22,8 @@ selection <- function(Xlist,Ylist,familylist,Kmethod,Zmethod,q,offset,Wmethod){
   Z <- z_statistics(Xlist,Ylist,Zmethod,familylist,XKnock)$Z
   Ztilde <- z_statistics(Xlist,Ylist,Zmethod,familylist,XKnock)$Ztilde
 
-  Z_com <- osff_comb(Xlist,Z,Ztilde)$Z_com
-  Ztilde_com <- osff_comb(Xlist,Z,Ztilde)$Ztilde_com
+  Z_com <- oscf_comb(Xlist,Z,Ztilde)$Z_com
+  Ztilde_com <- oscf_comb(Xlist,Z,Ztilde)$Ztilde_com
 
   W <- w_statistics(Xlist,Wmethod,Z,Ztilde,Z_com,Ztilde_com)
 
