@@ -16,7 +16,7 @@ creates a combination of all knockoffs with help of OSCF function,
 calculates $W$ statistics and a threshold, finally returns a
 selection of variables.
 
-A complete tesis of this study can be found [here](http://tesiuami.izt.uam.mx/uam/aspuam/presentatesis.php?recno=223280006753712&docs=2232800067_537.pdf).
+A complete thesis of this study can be found [here](http://tesiuami.izt.uam.mx/uam/aspuam/presentatesis.php?recno=223280006753712&docs=2232800067_537.pdf).
 
 ## Installation
 
