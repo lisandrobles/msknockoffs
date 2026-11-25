@@ -7,14 +7,16 @@
 
 <!-- badges: end -->
 
-msknockoffs stands for multi-study knockoffs. This package helps to get
+_msknockoffs_ stands for multi-study knockoffs. This package is very useful to get
 a set of variables that are associated with a response $y$. The package
 contains a main algorithm that is able to use $K$ datasets of gene
-expression data. It calculates knockoffs from two methods (sequential
+expression data, it calculates knockoffs from two methods (sequential
 and second-order), $Z$ and $Z$-knockoff statistics of the $K$ datasets,
-creates a combination of all knockoffs with help of OSFF function,
-calculates $W$ statistics and the threshold, and finally returns a
+creates a combination of all knockoffs with help of OSCF function,
+calculates $W$ statistics and a threshold, finally returns a
 selection of variables.
+
+A complete tesis of this study can be found [here](http://tesiuami.izt.uam.mx/uam/aspuam/presentatesis.php?recno=223280006753712&docs=2232800067_537.pdf).
 
 ## Installation
 
@@ -46,18 +48,11 @@ library(seqknockoff)
 library(glmnet)
 ```
 
-    ## Cargando paquete requerido: Matrix
-
-    ## Loaded glmnet 5.0
 
 ``` r
 #install.packages("clustermq")
 library(clustermq)
 ```
-
-    ## * Option 'clustermq.scheduler' not set, defaulting to 'LOCAL'
-
-    ## --- see: https://mschubert.github.io/clustermq/articles/userguide.html#configuration
 
 ``` r
 #devtools::install_github("lisandrobles/msknockoffs")
@@ -91,7 +86,7 @@ This algorithm is very flexible, you can use the number of dataset you
 like, select different methods for calculating knockoffs, diferent W
 functions, etc.
 
-Then we call the main function. This function calculates knockoffs, Z
+Then we call the main function, this function calculates knockoffs, Z
 and Z-knockoff statistics, creates a combination of all knockoffs, and
 calculates W statistics and the threshold. Finally, it returns a
 selection of variables.
@@ -113,20 +108,16 @@ gene_id_selection <- gene_id(selection_of_indices,q,data1)
     ## [25] "7058"   "7103"   "7134"   "729238" "7433"   "762"    "8547"   "857"   
     ## [33] "9244"   "9245"   "948"    "9510"   "9518"
 
-This indices can be found and study in web page from USA goverment,
-<https://www.ncbi.nlm.nih.gov/>.
+This indices can be found and study in [web page](https://www.ncbi.nlm.nih.gov/) from USA goverment.
 
 Another important function in this package is the function that can make
-a number of $n$ selections, that is, yo can run for example fifty times
-the function an the using a rule propose in Kormaksson et al., 2021, get
-a final set of indices or variables. This make the selection more
-robust.
+a number of $n$ selections, that is, you can run, for example, fifty times
+the function, this give a set fifty selections, then using a rule propose in Kormaksson et al., 2021,
+we get a final set of indices or variables.
 
 ``` r
 n_selection_of_indices <- n_selection(n=50,Xlist,Ylist,familylist,Kmethod,Zmethod,q,offset,Wmethod)
 ```
-
-    ## Running sequentially ('LOCAL') ...
 
 Using the gene_id function
 
@@ -139,6 +130,4 @@ n_gene_id_selection <- gene_id(n_selection_of_indices,q,data1)
     ##  [9] "2327"   "2920"   "3043"   "3569"   "4318"   "4499"   "51208"  "6696"  
     ## [17] "7049"   "7103"   "7134"   "729238" "762"    "8685"   "9245"   "9518"
 
-It may seem that doing a lot selection gives fewer selected indices; the
-reason is that with this form of selection, the FDR is totally
-controlled.
+That is our selected indices, those indices can be studied in [web page](https://www.ncbi.nlm.nih.gov/).
