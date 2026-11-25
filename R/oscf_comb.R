@@ -10,7 +10,7 @@
 #' @returns Two vectors, Z_com and Ztilde_com
 #' @export
 #'
-osff_comb <- function(Xlist,Z,Ztilde){
+oscf_comb <- function(Xlist,Z,Ztilde){
 
   K <- length(Xlist)
   A <- as.matrix(expand.grid(rep(list(c(0, 1)), K)))
